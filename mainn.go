@@ -20,23 +20,15 @@ func main() {
 					input2 = fmt.Sprint(j + 1)
 					inputr := input1 + " " + symbol + " " + input2 + " " + input3 + " "
 					resultint := calculateR(inputr)
-					if resultint > 0 {
-						fmt.Println("Результат:", integerToRoman(resultint))
-					} else {
-						fmt.Println("")
-					}
+					fmt.Println("Результат:", integerToRoman(resultint))
+					return
 				}
 			}
-			return
 		}
 	}
 	input := input1 + " " + symbol + " " + input2 + " " + input3 + " "
 	result := calculateINT(input)
-	if result == 0 {
-		fmt.Println("")
-	} else {
-		fmt.Println(result)
-	}
+	fmt.Println(result)
 }
 
 func integerToRoman(number int) string {
@@ -75,14 +67,13 @@ func calculateINT(input string) int {
 
 	operands := strings.Fields(input)
 	if len(operands) > 3 {
-		fmt.Println("Неверный формат ввода")
-		return 0
+		panic("Неверный формат ввода !")
 	}
 
 	a, err1 := strconv.Atoi(operands[0])
 	b, err2 := strconv.Atoi(operands[2])
 	if err1 != nil || err2 != nil {
-
+		panic("Введены некорректные значения")
 	}
 
 	if ((a >= 1) && (a <= 10)) && ((b >= 1) && (b <= 10)) {
@@ -96,16 +87,15 @@ func calculateINT(input string) int {
 			return a * b
 		case "/":
 			if b == 0 {
-				return 0
+				panic("Деление на 0")
 			}
 			return a / b
 		default:
-			fmt.Println("Неверная операция")
-			return 0
+			panic("Неверная операция !")
 		}
 
 	} else {
-		return 0
+		panic("Введены некорректные значения")
 	}
 }
 
@@ -113,14 +103,13 @@ func calculateR(inputr string) int {
 
 	operands := strings.Fields(inputr)
 	if len(operands) > 3 {
-		fmt.Println("Неверный формат ввода")
-		return 0
+		panic("Неверный формат !")
 	}
 
 	a, err1 := strconv.Atoi(operands[0])
 	b, err2 := strconv.Atoi(operands[2])
 	if err1 != nil || err2 != nil {
-
+		panic("Введены некорректные значения")
 	}
 
 	if ((a >= 1) && (a <= 10)) && ((b >= 1) && (b <= 10)) {
@@ -134,16 +123,14 @@ func calculateR(inputr string) int {
 			return a * b
 		case "/":
 			if b == 0 {
-				fmt.Println("Деление на ноль")
-				return 0
+				panic("Деление на 0")
 			}
 			return a / b
 		default:
-			fmt.Println("Неверная операция")
-			return 0
+			panic("Неверная операция !")
 		}
 
 	} else {
-		return 0
+		panic("Введены некорректные значения")
 	}
 }
