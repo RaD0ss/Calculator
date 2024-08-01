@@ -20,7 +20,7 @@ func main() {
 					input2 = fmt.Sprint(j + 1)
 					inputr := input1 + " " + symbol + " " + input2 + " " + input3 + " "
 					resultint := calculateR(inputr)
-					if resultint != 0 {
+					if resultint >= 0 {
 						fmt.Println("Результат:", integerToRoman(resultint))
 					} else {
 						panic("Некорректно !")
