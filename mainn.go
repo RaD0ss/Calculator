@@ -17,7 +17,6 @@ func main() {
 			input1 = fmt.Sprint(i + 1)
 			for j := 0; j < 10; j++ {
 				if input2 == roman[j] {
-
 					input2 = fmt.Sprint(j + 1)
 					inputr := input1 + " " + symbol + " " + input2 + " " + input3 + " "
 					resultint := calculateR(inputr)
@@ -27,11 +26,9 @@ func main() {
 						panic("Некорректно !")
 					}
 					return
-				} else {
-					panic("Некорректно !")
 				}
 			}
-
+			panic("Некорректно !")
 		}
 	}
 	input := input1 + " " + symbol + " " + input2 + " " + input3 + " "
