@@ -33,7 +33,7 @@ func main() {
 	}
 	input := input1 + " " + symbol + " " + input2 + " " + input3 + " "
 	result := calculateINT(input)
-	fmt.Println(result)
+	fmt.Println("Результат:", result)
 }
 
 func integerToRoman(number int) string {
